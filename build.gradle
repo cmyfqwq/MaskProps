@@ -1,10 +1,9 @@
+// 根 build.gradle
 buildscript {
     repositories {
         google()
         mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.2'
+        maven { url 'https://api.xposed.info/' }
     }
 }
 
@@ -12,10 +11,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://maven.lsposed.org/' }
+        maven { url 'https://api.xposed.info/' }
     }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }

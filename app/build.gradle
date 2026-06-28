@@ -27,6 +27,6 @@ android {
 }
 
 dependencies {
-    // LSPosed API（provided，不打包进 APK）
-    compileOnly 'org.lsposed:api:92.0'
+    // Xposed API（provided，不打包进 APK，LSPosed 兼容）
+    compileOnly 'de.robv.android.xposed:api:82'
 }
