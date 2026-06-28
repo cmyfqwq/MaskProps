@@ -1,0 +1,32 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.oppo.spoof'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.oppo.spoof'
+        minSdk 26
+        targetSdk 35
+        versionCode 13
+        versionName 'v1.3'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // LSPosed API（provided，不打包进 APK）
+    compileOnly 'org.lsposed:api:92.0'
+}
