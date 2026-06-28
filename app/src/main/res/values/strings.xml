@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">伪装为OPPO</string>
+    <string name="module_description">伪装 Build 信息为一加 Ace 6T，支持通过 assets/packages.txt 自定义目标包名</string>
+</resources>
