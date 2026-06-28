@@ -19,20 +19,14 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
-
     - name: Create local.properties
       run: echo "sdk.dir=$ANDROID_HOME" > local.properties
 
-    - name: Download Gradle
-      run: |
-        wget -q https://services.gradle.org/distributions/gradle-8.9-bin.zip -O /tmp/gradle.zip
-        unzip -q /tmp/gradle.zip -d $HOME/gradle
-        echo "$HOME/gradle/gradle-8.9/bin" >> $GITHUB_PATH
+    - name: Accept Android SDK licenses
+      run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
     - name: Build APK
-      run: gradle assembleRelease
+      run: ./gradlew assembleRelease
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
