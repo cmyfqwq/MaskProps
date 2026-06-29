@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">设备伪装</string>
-    <string name="module_description">一键伪装设备信息，7 个主流品牌预设，LSPosed 勾选即生效</string>
+    <string name="app_name">MaskProps</string>
+    <string name="module_description">伪装设备信息，支持 7 个品牌预设，LSPosed 勾选即生效</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.oppo.spoof;
+package com.maskprops.app;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.XC_MethodHook;
@@ -11,8 +11,8 @@ import java.util.Map;
 
 public class MainHook implements IXposedHookLoadPackage {
 
-    private static final String PKG = "com.cmyf.oppo.spoof";
-    private static final String PREFS_NAME = "spoof_config";
+    private static final String PKG = "com.maskprops";
+    private static final String PREFS_NAME = "maskprops_config";
 
     private XSharedPreferences prefs;
 
@@ -26,7 +26,7 @@ public class MainHook implements IXposedHookLoadPackage {
         int presetIdx = PresetData.getPresetIndex(presetKey);
         String[] presetVals = PresetData.getPreset(presetKey);
 
-        XposedBridge.log("[OPPO-Spoof] Hook -> " + lpparam.packageName
+        XposedBridge.log("[MaskProps] Hook -> " + lpparam.packageName
                 + " | preset=" + presetKey + " (" + presetVals[PresetData.IDX_BRAND]
                 + " " + presetVals[PresetData.IDX_MODEL] + ")");
 
@@ -68,9 +68,9 @@ public class MainHook implements IXposedHookLoadPackage {
                 }
             });
 
-            XposedBridge.log("[OPPO-Spoof] SystemProperties hook OK -> " + lpparam.packageName);
+            XposedBridge.log("[MaskProps] SystemProperties hook OK -> " + lpparam.packageName);
         } catch (Throwable e) {
-            XposedBridge.log("[OPPO-Spoof] SystemProperties hook FAIL: " + e.getMessage());
+            XposedBridge.log("[MaskProps] SystemProperties hook FAIL: " + e.getMessage());
         }
     }
 

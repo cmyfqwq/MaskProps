@@ -1,4 +1,4 @@
-package com.oppo.spoof;
+package com.maskprops.app;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -28,7 +28,7 @@ public class SettingsActivity extends Activity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         getWindow().setStatusBarColor(getResources().getColor(R.color.primary_dark));
 
-        prefs = getSharedPreferences("spoof_config", MODE_PRIVATE);
+        prefs = getSharedPreferences("maskprops_config", MODE_PRIVATE);
         cardContainer = findViewById(R.id.card_container);
         tvPresetLabel  = findViewById(R.id.tv_preset_label);
         tvPresetBrand  = findViewById(R.id.tv_preset_brand);
