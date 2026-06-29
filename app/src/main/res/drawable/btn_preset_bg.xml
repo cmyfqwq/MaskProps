@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  预设选择按钮：翠绿实色 + 按下暗色态 -->
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true">
-        <shape android:shape="rectangle">
-            <solid android:color="#FF16A34A" />
-            <corners android:radius="12dp" />
-        </shape>
-    </item>
-    <item>
-        <shape android:shape="rectangle">
-            <solid android:color="@color/success" />
-            <corners android:radius="12dp" />
-        </shape>
-    </item>
-</selector>
+<!--  预设选择按钮 — 成功色翠绿 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/success" />
+    <corners android:radius="12dp" />
+</shape>

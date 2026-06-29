@@ -113,7 +113,7 @@ public class SettingsActivity extends Activity {
         LinearLayout iconWrap = new LinearLayout(this);
         iconWrap.setGravity(Gravity.CENTER);
         iconWrap.setLayoutParams(new LinearLayout.LayoutParams(dp2px(36), dp2px(36)));
-        iconWrap.setBackgroundResource(R.drawable.ic_bg_small);
+        iconWrap.setBackgroundColor(getColor(R.color.primary_container));
 
         TextView icon = new TextView(this);
         icon.setText(prop.emoji);
@@ -325,7 +325,7 @@ public class SettingsActivity extends Activity {
             row.addView(mid);
             row.setClickable(true);
             row.setFocusable(true);
-            row.setBackgroundResource(R.drawable.ripple_list_item);
+            row.setBackgroundColor(getColor(R.color.surface));
 
             row.setOnClickListener(v -> {
                 String presetKey = (String) v.getTag();
