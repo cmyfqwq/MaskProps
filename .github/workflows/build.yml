@@ -47,10 +47,19 @@ jobs:
         gradle --version
 
     - name: Build APK
-      run: gradle assembleDebug --no-daemon --stacktrace
+      run: gradle assembleRelease --no-daemon --stacktrace
+
+    - name: Sign APK
+      run: |
+        # 生成 keystore
+        keytool -genkey -v -keystore $HOME/debug.keystore -storepass android -keypass android -alias androiddebugkey -dname "CN=Android Debug,O=Android,C=US" -keyalg RSA -keysize 2048 -validity 10000
+        # 签名 APK
+        $ANDROID_HOME/build-tools/35.0.0/apksigner sign --ks $HOME/debug.keystore --ks-pass pass:android --key-pass pass:android --out app/build/outputs/apk/release/app-release-signed.apk app/build/outputs/apk/release/app-release-unsigned.apk
+        # 删除未签名的 APK
+        rm -f app/build/outputs/apk/release/app-release-unsigned.apk
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: MaskProps-v3.0
-        path: app/build/outputs/apk/debug/*.apk
+        path: app/build/outputs/apk/release/app-release-signed.apk
