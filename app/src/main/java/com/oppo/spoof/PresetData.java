@@ -107,13 +107,11 @@ public final class PresetData {
     public static class PropDef {
         public final String key;       // SharedPreference key
         public final String label;     // 中文标签
-        public final String emoji;     // 图标
         public final int presetIdx;    // 对应 PRESETS 数组的索引
 
-        public PropDef(String key, String label, String emoji, int presetIdx) {
+        public PropDef(String key, String label, int presetIdx) {
             this.key = key;
             this.label = label;
-            this.emoji = emoji;
             this.presetIdx = presetIdx;
         }
 
@@ -125,16 +123,16 @@ public final class PresetData {
     }
 
     public static final PropDef[] PROPS = {
-        new PropDef("brand",        "品牌",    "🏷️",  IDX_BRAND),
-        new PropDef("manufacturer", "制造商",  "🏭",  IDX_MANUFACTURER),
-        new PropDef("model",        "型号",    "📱",  IDX_MODEL),
-        new PropDef("device",       "设备代号", "⚙️",  IDX_DEVICE),
-        new PropDef("product",      "产品名",  "📦",  IDX_PRODUCT),
-        new PropDef("hardware",     "硬件",    "🔧",  IDX_HARDWARE),
-        new PropDef("fingerprint",  "指纹",    "🖐️",  IDX_FINGERPRINT),
-        new PropDef("release",      "版本号",  "🔢",  IDX_RELEASE),
-        new PropDef("sdk",          "SDK",     "💿",  IDX_SDK),
-        new PropDef("display",      "显示ID",  "🖥️",  IDX_DISPLAY),
+        new PropDef("brand",        "品牌",     IDX_BRAND),
+        new PropDef("manufacturer", "制造商",   IDX_MANUFACTURER),
+        new PropDef("model",        "型号",     IDX_MODEL),
+        new PropDef("device",       "设备代号", IDX_DEVICE),
+        new PropDef("product",      "产品名",   IDX_PRODUCT),
+        new PropDef("hardware",     "硬件",     IDX_HARDWARE),
+        new PropDef("fingerprint",  "指纹",     IDX_FINGERPRINT),
+        new PropDef("release",      "版本号",   IDX_RELEASE),
+        new PropDef("sdk",          "SDK",      IDX_SDK),
+        new PropDef("display",      "显示ID",   IDX_DISPLAY),
     };
 
     // ─── 系统属性 Key 映射 ───

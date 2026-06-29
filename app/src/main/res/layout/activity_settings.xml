@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@color/bg_page">
 
-    <!-- ════════ 渐变顶栏 ════════ -->
+    <!-- 顶栏 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="72dp"
@@ -16,22 +16,6 @@
         android:paddingEnd="16dp"
         android:elevation="6dp">
 
-        <!-- 图标区 -->
-        <LinearLayout
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:background="@color/header_icon_bg"
-            android:layout_marginEnd="14dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🎭"
-                android:textSize="22sp" />
-        </LinearLayout>
-
-        <!-- 标题区 -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -44,24 +28,22 @@
                 android:text="设备伪装"
                 android:textColor="@color/on_primary"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:letterSpacing="0.02" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="自定义机型信息 · LSPosed 勾选即生效"
+                android:text="LSPosed 勾选即生效"
                 android:textColor="@color/header_subtitle"
                 android:textSize="11sp"
                 android:layout_marginTop="2dp" />
         </LinearLayout>
 
-        <!-- 版本号 -->
         <TextView
             android:id="@+id/tv_version"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="v2.2"
+            android:text="v2.4"
             android:textColor="@color/header_version_text"
             android:textSize="11sp"
             android:background="@color/header_version_bg"
@@ -69,7 +51,7 @@
             android:paddingVertical="3dp" />
     </LinearLayout>
 
-    <!-- ════════ 滚动内容 ════════ -->
+    <!-- 滚动内容 -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -85,7 +67,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- ════════ 预设机型卡片 ════════ -->
+            <!-- 预设机型卡片 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -94,7 +76,7 @@
                 android:padding="18dp"
                 android:layout_marginBottom="20dp">
 
-                <!-- 卡片头部 -->
+                <!-- 标题行 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -102,28 +84,18 @@
                     android:gravity="center_vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="📱"
-                        android:textSize="22sp"
-                        android:layout_marginEnd="10dp" />
-
-                    <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="预设机型"
-                        android:textColor="@color/text_primary"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:text="当前机型"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
 
-                    <!-- 当前选中机型标签 -->
                     <TextView
                         android:id="@+id/tv_preset_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="一加 Ace 6T"
-                        android:textColor="@color/on_primary_container"
+                        android:textColor="@color/primary"
                         android:textSize="12sp"
                         android:textStyle="bold"
                         android:background="@color/primary_container"
@@ -131,13 +103,12 @@
                         android:paddingVertical="4dp" />
                 </LinearLayout>
 
-                <!-- 分割线 -->
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@drawable/divider_horizontal"
-                    android:layout_marginTop="14dp"
-                    android:layout_marginBottom="14dp" />
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp" />
 
                 <!-- 机型详情 -->
                 <LinearLayout
@@ -156,7 +127,6 @@
                             android:id="@+id/tv_preset_brand"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="OnePlus"
                             android:textColor="@color/text_primary"
                             android:textSize="17sp"
                             android:textStyle="bold" />
@@ -165,7 +135,6 @@
                             android:id="@+id/tv_preset_model"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ACE6T"
                             android:textColor="@color/text_secondary"
                             android:textSize="14sp"
                             android:layout_marginTop="3dp" />
@@ -174,16 +143,14 @@
                             android:id="@+id/tv_preset_android"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Android 15"
                             android:textColor="@color/text_tertiary"
                             android:textSize="12sp"
                             android:layout_marginTop="2dp" />
                     </LinearLayout>
 
-                    <!-- 选择按钮 -->
                     <TextView
                         android:id="@+id/btn_preset"
-                        android:layout_width="120dp"
+                        android:layout_width="110dp"
                         android:layout_height="38dp"
                         android:background="@drawable/btn_preset_bg"
                         android:text="切换机型"
@@ -196,7 +163,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- ════════ 属性配置区标题 ════════ -->
+            <!-- 属性区标题 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -204,12 +171,6 @@
                 android:gravity="center_vertical"
                 android:layout_marginBottom="12dp"
                 android:paddingStart="4dp">
-
-                <View
-                    android:layout_width="4dp"
-                    android:layout_height="18dp"
-                    android:background="@color/primary"
-                    android:layout_marginEnd="10dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -221,34 +182,20 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tv_enabled_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0/10"
+                    android:text="点击数值可修改"
                     android:textColor="@color/text_tertiary"
-                    android:textSize="13sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- ════════ 属性卡片容器（Java 动态构建） ════════ -->
+            <!-- 属性卡片容器（Java 动态构建） -->
             <LinearLayout
                 android:id="@+id/card_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="8dp" />
+                android:orientation="vertical" />
 
-            <!-- 长按编辑提示 -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="💡 长按属性值可自定义修改"
-                android:textColor="@color/text_tertiary"
-                android:textSize="12sp"
-                android:gravity="center"
-                android:layout_marginBottom="8dp"
-                android:alpha="0.7" />
-
-            <!-- 底部留白 -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="16dp" />
