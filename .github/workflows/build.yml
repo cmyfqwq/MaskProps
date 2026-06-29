@@ -38,16 +38,8 @@ jobs:
     - name: Create local.properties
       run: echo "sdk.dir=$HOME/android-sdk" > local.properties
 
-    - name: Download Gradle 8.9
-      run: |
-        cd $HOME
-        curl -L -o gradle-8.9-bin.zip "https://services.gradle.org/distributions/gradle-8.9-bin.zip"
-        unzip -q gradle-8.9-bin.zip
-        echo "$HOME/gradle-8.9/bin" >> $GITHUB_PATH
-        gradle --version
-
     - name: Build APK
-      run: gradle assembleRelease --no-daemon --stacktrace
+      run: ./gradlew assembleRelease --no-daemon --stacktrace
 
     - name: Sign APK
       run: |
